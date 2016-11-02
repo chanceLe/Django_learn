@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>show</title>
+  </head>
+  <body>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <td>
+            Name
+          </td>
+          <td>
+            City
+          </td>
+          <td>
+          address
+          </td>
+          <td>
+          state_province
+          </td>
+          <td>
+            country
+          </td>
+          <td>
+           website
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        {#% for line in name_list%#}
+         <tr>
+           <td>   {{line.name | cut:'l'}} </td>
+           <td>   {{line.city}} </td>
+            <td>   {{line.address }} </td>
+             <td>   {{line.state_province}} </td>
+              <td>   {{line.country}} </td>
+               <td>   {{line.website}} </td>
+         </tr>
+         {#% endfor%#}
+
+         <td>   {{name_list.name | cut:'A'}} </td>
+         <td>   {{name_list.city}} </td>
+          <td>   {{name_list.address }} </td>
+
+
+
+      </tbody>
+    </table>
+  </body>
+</html>
