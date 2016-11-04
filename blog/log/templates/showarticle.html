@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{article.title}}</title>
+  </head>
+  <body>
+    {% if article %}
+     <h2>Title: {{article.title}}</h2>
+     <h3>Author: {{article.author}}</h3>
+     <h3>Content:</h3>
+     <p>
+       {{article.text}}
+     </p>
+    {% endif%}
+
+    <p>
+       <a href="/log/haslogin/">Return</a>
+    </p>
+  </body>
+</html>

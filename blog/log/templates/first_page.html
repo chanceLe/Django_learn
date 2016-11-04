@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>首页</title>
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <style media="screen">
+      .lunbo{
+        /*margin-top:-60px;*/
+        padding: 0;
+        width: 60%;
+        margin-left: 60px;
+      }
+      .dividline{
+        margin-top: 5px;
+        color:red;
+        border-top: 4px solid red;
+      }
+      #nav{
+        margin-top: -78px;
+        padding: 0;
+      }
+      .navbar-default{
+        background-color: #99ff00;
+      }
+      ul{
+        list-style: none;
+        padding: 0;
+      }
+      .right{
+        float: right;
+      }
+      #newarticle{
+        height: 330px;
+        overflow: scroll;
+      }
+      #newarticle span{
+        margin-right: 10px;
+      }
+      .leftside{
+        width: 100%;
+
+        border: 1px solid #99ff00;
+        margin-bottom: 10px;
+      }
+      .leftside-box{
+        width: 30%;
+        position: absolute;
+        right: 60px;
+        top: 237px;
+        /*border: 1px solid red;*/
+      }
+      hr{
+        margin-top: 10px;
+      }
+     .link{
+       width: 25%;
+       float: left;
+          /*border: 1px solid yellow;*/
+     }
+
+     .link img{
+       width: 60%;
+       height: 60%;
+       border-radius: 50%;
+       margin: 0 auto;
+       display: block;
+       /*border: 1px solid gray;*/
+     }
+     .link h6{
+       text-align: center;
+     }
+     .link-box{
+       display: flex;
+       justify-content: space-between;
+       /*border: 1px solid blue;*/
+     }
+     #myTabContent{
+       margin-top: 5px;
+     }
+     #myTabContent li{
+       /*padding-left: 30px;*/
+       line-height: 25px;
+     }
+     #myTabContent span{
+       display: inline-block;
+       height: 15px;
+       width: 25px;
+       border-radius: 4px;
+       background-color: gray;
+       text-align: center;
+       line-height: 15px;
+       color: white;
+     }
+     #myTab a{
+      padding: 5px;
+      background-color: transparent;
+     }
+     #myTab a:hover{
+       background-color: orange;
+     }
+     .label{
+       display: inline-block;
+       margin: 4px ;
+       height: 22px;
+       line-height: 22px;
+       text-align: center;
+     }
+     .youqinglianjie{
+       display: flex;
+       border: 1px solid #eee;
+       padding: 5px;
+       margin-bottom: 10px;
+       margin-top: -5px;
+       /*background-color: gray;*/
+       justify-content: space-between;
+     }
+      #liulanpaihang{
+        height:150px;
+        overflow: hidden;
+      }
+      #paihang1 li:first-child a span{
+        background-color: red;
+      }
+      #paihang1 li:nth-child(2) a span{
+        background-color: yellow;
+      }
+      #paihang1 li:nth-child(3) a span{
+        background-color: orange;
+      }
+
+    </style>
+     <script type="text/javascript">
+        $(document).ready(function(){
+          var s=$("#paihang1").find("li");
+          console.log(typeof s);
+            console.log(s.children()[0]);
+
+        // var sss=ss.find("span");
+        for(var i=0;i<6;i++){
+            var ss=s.children()[i];
+
+            var sp=document.createElement("span");
+            sp.innerHTML=i+1;
+            ss.prepend(sp);
+        }
+
+        })
+
+     </script>
+  </head>
+  <body style="background-color:aZure;">
+      <!-- 头部 -->
+      <div class="jumbotron" style="background-color:aZure;padding-top:20px;border-radius:4px;">
+          <div class="container" style="background-color:#f8f8f8;">
+        <h1> <b><em>{{ name | capfirst}}</em></b> blog</h1>
+         <p>技术只是解决问题的选择，而不是解决问题的根本。</p>
+      </div>
+    </div>
+
+     <!-- 导航条  -->
+     <div class="container" id=nav>
+       <div class="navbar navbar-default">
+         <ul class="nav navbar-nav">
+           <li><a href="/log/writearticle">写新文章</a></li>
+           <li><a href="#">精彩生活</a></li>
+           <li><a href="#">旅游心情</a></li>
+           <li><a href="#">技术达人</a></li>
+           <li><a href="#">电影推荐</a></li>
+         </ul>
+       </div>
+     </div>
+    <!-- 图片展示 -->
+    <div class="container lunbo">
+      <div class="carousel" id="lunbobox" data-interval="800" data-pause="hover" data-wrap="true">
+       <ol class="carousel-indicators">
+         <li class="active" role="button" data-target="#lunbobox" data-silde-to="0"></li>
+         <li role="button" data-target="#lunbobox" data-silde-to="1"></li>
+         <li role="button" data-target="#lunbobox" data-silde-to="2"></li>
+       </ol>
+       <div class="carousel-inner">
+         <div class="item active">
+           <a href="#"><img src="/static/images/1.jpg" alt=""></a>
+           <div class="carousel-caption">
+             <h3 style="font-size:30px;color:blue;">世界因你而精彩1</h3>
+           </div>
+         </div>
+         <div class="item">
+           <a href="#"><img src="/static/images/2.jpg" alt=""></a>
+           <div class="carousel-caption">
+             <h3 style="font-size:30px;color:yellow">精彩无处不在2<h3>
+           </div>
+         </div>
+         <div class="item">
+           <a href="#"><img src="/static/images/3.jpg" alt=""></a>
+           <div class="carousel-caption">
+             <h3 style="font-size:30px;color:lightblue;">精彩世界精彩你我3</h3>
+           </div>
+         </div>
+       </div>
+       <!-- 控制器 -->
+       <a  class="right carousel-control" href="#lunbobox" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+       <a  class="left carousel-control" href="#lunbobox" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      </div>
+    </div>
+
+    <!-- 最新文章 -->
+     <div class="container lunbo" style="margin-top:20px;">
+      <h4>最新文章</h4>
+       <hr class="dividline">
+       <ul id="newarticle">
+         {% if articles%}
+         {% for article in articles reversed %}
+         <li>
+
+           <div class="">
+             <h4><a href="/log/{{article.id}}"><b>{{article.title}}</b></a></h4>
+             <p>
+            {{article.text }}
+             </p>
+             <div class="">
+                <span>测试，Python编程</span> <span>{{article.time}}</span> <span class="right"><a href="#">评论</a></span> <span class="right"><a href="#">浏览</a></span>
+             </div>
+           </div>
+           <hr>
+         </li>
+         {% endfor%}
+         {% endif%}
+<!--
+         <li>
+           <div class="">
+             <h4><a href="#"><b>10个用于web开发的最好Python框架</b></a></h4>
+             <p>
+       Python是一门动态的、面向对象的语言，其最初就是作为一门面向对象语言设计的，并且在后期又加入了一些其他的
+             </p>
+             <div class="">
+                <span>测试，Python编程</span> <span>2015-9-16</span> <span class="right"><a href="#">评论</a></span> <span class="right"><a href="#">浏览</a></span>
+             </div>
+           </div>
+           <hr>
+         </li>
+         <li>
+           <div class="">
+             <h4><a href="#"><b>10个用于web开发的最好Python框架</b></a></h4>
+             <p>
+       Python是一门动态的、面向对象的语言，其最初就是作为一门面向对象语言设计的，并且在后期又加入了一些其他的
+             </p>
+             <div class="">
+                <span>测试，Python编程</span> <span>2015-9-16</span> <span class="right"><a href="#">评论</a></span> <span class="right"><a href="#">浏览</a></span>
+             </div>
+           </div>
+           <hr>
+         </li> -->
+
+       </ul>
+     <!--分页导航条  -->
+       <nav>
+         <ul class="pagination" style="float:right;margin-top:-5px;">
+           <li><a href="#">&laquo;</a></li>
+           <li><a href="#">上一页</a></li>
+           <li><span style="color:red;">1/1</span></li>
+           <li><a href="#">下一页</a></li>
+
+           <li><a href="#">&raquo;</a></li>
+         </ul>
+       </nav>
+     </div>
+
+     <!-- 侧边栏 -->
+      <div class="leftside-box">
+
+
+     <div class="container leftside">
+      <h4>关于我</h4>
+      <hr>
+      <div class="link-box">
+      <div class="link">
+         <img src="/static/images/link1.jpg" alt="" />
+         <h6>新浪微博</h6>
+      </div>
+      <div class="link">
+         <img src="/static/images/link1.jpg" alt="" />
+         <h6>新浪微博</h6>
+      </div>
+      <div class="link">
+         <img src="/static/images/link1.jpg" alt="" />
+         <h6>新浪微博</h6>
+      </div>
+      <div class="link">
+         <img src="/static/images/link1.jpg" alt="" />
+         <h6>新浪微博</h6>
+      </div>
+     </div>
+
+
+      <!--标签页 -->
+
+  <ul id="myTab" class="nav nav-tabs">
+      <li class="active">
+          <a href="#liulanpaihang" data-toggle="tab" >
+            浏览排行
+          </a>
+      </li>
+      <li><a href="#pinglunpaihang" data-toggle="tab">评论排行</a></li>
+          <li><a href="#zhanzhangtuijian" data-toggle="tab">站长推荐</a></li>
+
+  </ul>
+  <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="liulanpaihang">
+        <ul id="paihang1">
+          {% if articles %}
+          {% for line in articles reversed %}
+          <li><a href="/log/{{line.id}}">{{line.title}}</a></li>
+          {% endfor%}
+          {% endif%}
+          <!-- <li><a href="#"><span >1</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>2</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>3</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>4</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>5</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>6</span>住在手机里的朋友</a></li> -->
+        </ul>
+      </div>
+      <div class="tab-pane fade in " id="pinglunpaihang">
+        <ul>
+          <li><a href="#"><span>1</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>2</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>3</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>4</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>5</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>6</span>住在手机里的朋友</a></li>
+        </ul>
+      </div>
+      <div class="tab-pane fade in" id="zhanzhangtuijian">
+        <ul>
+          <li><a href="#"><span>1</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>2</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>3</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>4</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>5</span>住在手机里的朋友</a></li>
+          <li><a href="#"><span>6</span>住在手机里的朋友</a></li>
+        </ul>
+      </div>
+  </div>
+
+  </div>
+ <!-- 标签 -->
+  <div class="container  leftside">
+   <h4>标签云</h4>
+   <hr>
+       <span class="label label-default">百度</span>
+       <span class="label label-primary">个人博客</span>
+       <span class="label label-success">web开发</span>
+       <span class="label label-info">JavaScript</span>
+       <span class="label label-warning">css3</span>
+       <span class="label label-danger">html5+css3</span>
+       <span class="label label-default">百度</span>
+       <span class="label label-primary">个人博客</span>
+       <span class="label label-success">web开发</span>
+       <span class="label label-info">JavaScript</span>
+       <span class="label label-warning">css3</span>
+       <span class="label label-danger">html5+css3</span>
+</div>
+
+<!-- 文章归档 -->
+<div class="container  leftside" >
+ <h4>文章归档</h4>
+ <hr>
+    <ul>
+      <li><a href="#">2015年2月文章</a></li>
+      <li><a href="#">2015年3月文章</a></li>
+      <li><a href="#">2015年4月文章</a></li>
+      <li><a href="#">2015年5月文章</a></li>
+      <li><a href="#">2015年6月文章</a></li>
+      <li><a href="#">2015年7月文章</a></li>
+    </ul>
+</div>
+
+
+<!-- 友情链接 -->
+<div class="container  leftside" >
+ <h4>友情链接</h4>
+ <hr>
+<div class="youqinglianjie">
+  <a href="http://www.baidu.com">百度</a>
+  <a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html">Bootstrap</a>
+  <a href="http://docs.30c.org/djangobook2/">Django book</a>
+  <a href="http://www.runoob.com/jquery/jquery-tutorial.html">jQuery</a>
+  <a href="http://www.runoob.com/css3/css3-tutorial.html">CSS3</a>
+</div>
+</div>
+
+  </div>
+
+
+  </body>
+</html>
